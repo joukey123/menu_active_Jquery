@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+      $(() => {
+        // $("#menu li a").click(function () {
+        //   $(this).siblings().addClass("showing");
+        //   $(this).parent().siblings().children("ul").removeClass("showing");
+        // });
+        $(".textBox").slideUp();
+
+        $("#menu li a").click(function () {
+          $(this).siblings().slideDown();
+          $(this).parent().siblings().children("ul").slideUp();
+        });
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #wrap {
+        width: 900px;
+        height: 333px;
+        margin: 100px auto;
+        padding: 50px;
+        background-color: aqua;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+      }
+      #menu {
+        position: relative;
+      }
+      #menu > li {
+        width: 160px;
+      }
+      #menu > li > a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        background-color: tomato;
+        padding: 5px;
+        text-align: center;
+        border: 1px solid black;
+      }
+
+      .textBox {
+        width: 800px;
+        height: 200px;
+        background-color: teal;
+        border: 1px solid black;
+        position: absolute;
+        top: 33px;
+        left: 0;
+        padding: 30px;
+        /* opacity: 0; */
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .textBox h1 {
+        margin-bottom: 20px;
+      }
+      /* .showing {
+        opacity: 1;
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <nav>
+        <ul id="menu">
+          <li>
+            <a href="#">HTML5</a>
+            <ul class="textBox showing">
+              <li>
+                <h1>HTML5</h1>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed
+                aut ipsam illum iure repellat dolor impedit, numquam cum nulla
+                est cumque quos, enim, perferendis voluptatum molestias ea
+                dolorem quaerat. Explicabo?
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">CSS3</a>
+            <ul class="textBox">
+              <li>
+                <h1>CSS3</h1>
+
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed
+                aut ipsam illum iure repellat dolor impedit, numquam cum nulla
+                est cumque quos, enim, perferendis voluptatum molestias ea
+                dolorem quaerat. Explicabo?
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Bootstrap</a>
+            <ul class="textBox">
+              <li>
+                <h1>Bootstrap</h1>
+
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed
+                aut ipsam illum iure repellat dolor impedit, numquam cum nulla
+                est cumque quos, enim, perferendis voluptatum molestias ea
+                dolorem quaerat. Explicabo?
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">JavaScript</a>
+            <ul class="textBox">
+              <li>
+                <h1>JavaScript</h1>
+
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed
+                aut ipsam illum iure repellat dolor impedit, numquam cum nulla
+                est cumque quos, enim, perferendis voluptatum molestias ea
+                dolorem quaerat. Explicabo?
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Jquery</a>
+            <ul class="textBox">
+              <li class="showing">
+                <h1>Jquery</h1>
+
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed
+                aut ipsam illum iure repellat dolor impedit, numquam cum nulla
+                est cumque quos, enim, perferendis voluptatum molestias ea
+                dolorem quaerat. Explicabo?
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>

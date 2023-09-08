@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+      $(() => {
+        $("li  a").click(function () {
+          $(this).parent().addClass("active");
+          $(this).parent().siblings().removeClass("active");
+        });
+      });
+    </script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    #wrap {
+      margin: 50px auto;
+    }
+    #tabMenu {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      position: relative;
+    }
+    #tabMenu li {
+      width: 150px;
+    }
+    #tabMenu li a {
+      display: block;
+      text-align: center;
+      border: 1px solid black;
+      background-color: #ccc;
+      padding: 5px 10px;
+    }
+    #tabMenu li:hover a {
+      background-color: #eeee;
+    }
+
+    #tabMenu li:first-child a {
+      border-left: 1px solid black;
+    }
+    #tabMenu li a {
+      border-left: 0;
+      border-bottom: 0;
+    }
+    #tabMenu > li.active div {
+      position: absolute;
+      width: 600px;
+      height: 300px;
+      background-color: blanchedalmond;
+      border: 1px solid black;
+      top: 32px;
+      left: 0;
+    }
+    #tabMenu > li.active a {
+      background-color: white;
+    }
+    #tabMenu > li div {
+      background-color: yellow;
+      position: absolute;
+      height: 0;
+      overflow: hidden;
+      top: 0px;
+    }
+    /*li 밑 div는 absoulte 위치로 안보이게  */
+    /* #tabMenu li div {
+          background-color: bisque;
+        } */
+  </style>
+  <body>
+    <div id="wrap">
+      <ul id="tabMenu">
+        <li class="active">
+          <a href="#">공지사항</a>
+          <div>
+            <ul>
+              <li>내용1</li>
+              <li>내용2</li>
+              <li>내용3</li>
+              <li>내용4</li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#">갤러리</a>
+          <div>
+            <ul>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">갤러리</a>
+          <div>
+            <ul>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">갤러리</a>
+          <div>
+            <ul>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+              <li><img src="http://www.placehold.it/50X50" /></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
